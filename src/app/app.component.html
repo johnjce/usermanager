@@ -1,0 +1,24 @@
+<nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="#">User Manager</a>
+    </div>
+    <ul class="nav navbar-nav" routerLinkActive="active">
+      <li *ngIf="authority === 'standard' || authority === 'admin'" class="nav-item">
+        <a class="nav-link" routerLink="users">Lista de usuarios</a>
+      </li>
+      <li *ngIf="authority === 'admin'" class="nav-item">
+        <a class="nav-link" routerLink="register">Agregar usuarios</a>
+      </li>
+      <li *ngIf="!authority; else loggedOut" class="nav-item">
+        <a class="nav-link" routerLink="auth/login">Login</a>
+      </li>
+      <li *ngIf="authority" class="nav-item">
+          <a class="nav-link" (click)="logout()">Logout</a>
+      </li>
+    </ul>
+  </div>
+</nav>
+<div class="container">
+  <router-outlet></router-outlet>
+</div>

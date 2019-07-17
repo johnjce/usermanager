@@ -1,0 +1,20 @@
+<table class="z-depth-1 table" id="userTable">
+    <thead>
+        <tr>
+            <th scope="col">Id</th>
+            <th scope="col">Nombre</th>
+            <th scope="col">Roles</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>{{userRes?.id}}</td>
+            <td>{{userRes?.name}}</td>
+            <td>
+                <ul *ngFor="let role of userRes?.roles">
+                    <li>{{role.name}}</li>
+                </ul>
+            </td>
+        </tr>
+    </tbody>
+</table>

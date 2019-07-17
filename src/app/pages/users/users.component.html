@@ -1,0 +1,22 @@
+<table class="z-depth-1 table" id="userTable">
+    <thead>
+        <tr>
+            <th scope="col">#</th>
+            <th scope="col">Id</th>
+            <th scope="col">Nombre</th>
+            <th scope="col">Roles</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let user of userList index as i">
+            <th scope="row">{{i+1}}</th>
+            <td>{{user.id}}</td>
+            <td><a routerLink="../user/{{user.name}}">{{user.name}}</a></td>
+            <td>
+                <ul *ngFor="let role of user?.roles">
+                    <li>{{role.name}}</li>
+                </ul>
+            </td>
+        </tr>
+    </tbody>
+</table>
